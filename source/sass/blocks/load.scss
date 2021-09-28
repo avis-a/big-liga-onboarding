@@ -1,0 +1,76 @@
+.load {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 768px;
+  min-height: 100%;
+
+  background-color: $color-default-white;
+
+  position: absolute;
+  z-index: 100;
+
+  cursor: pointer;
+  transition: $opacity-transition-settings;
+
+  &.fade-out {
+    opacity: 0;
+    z-index: -100;
+  }
+
+  @include viewport--md {
+    height: 1024px;
+  }
+
+  & img {
+    flex-grow: 1;
+
+    animation: fade-in 4s;
+  }
+
+  & p {
+    position: relative;
+    font-size: 24px;
+    line-height: 22px;
+    height: 100px;
+
+    animation: pulse infinite alternate 1.5s;
+
+    @include viewport--md {
+      visibility: hidden;
+    }
+
+    &::after {
+      @include viewport--md {
+        position: absolute;
+        left: 0;
+        width: 300px;
+        visibility: visible;
+        content: "Кликните на экран";
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// пульсация текста на лоадере
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

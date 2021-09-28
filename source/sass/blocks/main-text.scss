@@ -1,0 +1,35 @@
+.main-text {
+  @include viewport--md {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+
+    background-color: $color-neon-blue;
+
+    transition: $default-transition-settings;
+    transform: translateX(-100%);
+
+    &.slide-left {
+      transform: translateX(0);
+    }
+  }
+
+  & p {
+    font-size: 30px;
+    line-height: 40px;
+
+    @include viewport--md {
+      color: $color-default-white;
+      width: 360px;
+    }
+  }
+}
