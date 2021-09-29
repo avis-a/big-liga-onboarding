@@ -1,12 +1,22 @@
 .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.fade-in {
+    animation: fade-in 3s;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 
     @include viewport--md {
-      display: block;
       height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     & h1 {
@@ -16,9 +26,18 @@
       color: $color-neon-blue;
 
       @include viewport--md {
-        position: absolute;
         z-index: -10000;
       }
     }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

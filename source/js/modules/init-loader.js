@@ -1,4 +1,5 @@
 const loadContainer = document.querySelector('.load');
+const mainContent = document.querySelector('.main');
 
 const initLoader = () => {
 
@@ -22,6 +23,7 @@ const initLoader = () => {
   // функция скрытия лоадера
   const closeLoader = () => {
     loadContainer.classList.add('fade-out');
+    mainContent.classList.add('fade-in');
 
     // удаляем обработчики
     loadContainer.removeEventListener('click', containerClickListener, false);

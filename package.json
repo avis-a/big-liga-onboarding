@@ -1,6 +1,7 @@
 {
   "private": true,
   "browserslist": [
+    "last 5 Chrome versions",
     "last 2 versions",
     "IE 11",
     "Firefox ESR"

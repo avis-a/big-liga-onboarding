@@ -536,27 +536,60 @@ button,
   position: fixed;
   background-color: #ffffff;
   padding-top: 25px;
-  padding-bottom: 25px; }
+  padding-bottom: 25px;
+  z-index: 1; }
 
-.main__container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px; }
-  @media (max-width: 1023px) {
-    .main__container {
-      display: block;
-      height: 100vh; } }
-  .main__container h1 {
-    font-weight: normal;
-    font-size: 96px;
-    line-height: 96px;
-    color: #2c39f2; }
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .main.fade-in {
+    -webkit-animation: fade-in 3s;
+            animation: fade-in 3s; }
+  .main__container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; }
     @media (max-width: 1023px) {
-      .main__container h1 {
-        position: absolute;
-        z-index: -10000; } }
+      .main__container {
+        height: 100vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
+    .main__container h1 {
+      font-weight: normal;
+      font-size: 96px;
+      line-height: 96px;
+      color: #2c39f2; }
+      @media (max-width: 1023px) {
+        .main__container h1 {
+          z-index: -10000; } }
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 .load {
   display: -webkit-box;
@@ -578,8 +611,8 @@ button,
   position: absolute;
   z-index: 100;
   cursor: pointer;
-  -webkit-transition: opacity 0.7s, visibility 0s;
-  transition: opacity 0.7s, visibility 0s; }
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s; }
   .load.fade-out {
     opacity: 0;
     z-index: -100; }
@@ -609,12 +642,6 @@ button,
         width: 300px;
         visibility: visible;
         content: "Кликните на экран"; } }
-
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
 
 @keyframes fade-in {
   from {
